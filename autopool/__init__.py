@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 '''AutoPool: adaptive pooling operators for multiple instance learning'''
 
-__version__ = '0.1.0'
-
+from .version import version as __version__
 from .autopool import *
