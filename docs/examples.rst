@@ -1,4 +1,4 @@
 .. _examples:
 
-Example:
-========
+Example
+^^^^^^^

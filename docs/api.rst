@@ -2,8 +2,8 @@
 
 .. module:: autopool
 
-Core functionality
-------------------
+API Reference
+-------------
 .. automodule:: autopool.autopool
     :members:
 

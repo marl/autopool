@@ -2,21 +2,42 @@
    sphinx-quickstart on Thu Apr 26 11:17:42 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
+.. |br| raw:: html
 
-Welcome to autopool's documentation!
-====================================
+   <br />
+
+AutoPool
+========
+
+AutoPool is an adaptive pooling function with a learnable parameter that allows
+it to smoothly interpolate between min-, mean-, softmax- and max-pooling. It is
+implemented as a `Keras <https://keras.io/>`_ layer for easy integration in
+deep learning architectures.
+
+AutoPool was originally developed for multiple instance learning from weakly
+labeled time-series data as detailed in the
+`AutoPool paper <https://arxiv.org/>`_.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
 
-Installation
-============
+Getting Started
+===============
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     installation
+    definitions
+
+
+API Documentation
+=================
+.. toctree::
+   :maxdepth: 3
+
+   api
 
 
 Examples
@@ -25,13 +46,6 @@ Examples
     :maxdepth: 3
 
     examples
-
-API Reference
-=============
-.. toctree::
-   :maxdepth: 3
-
-   api
 
 
 Contribute
