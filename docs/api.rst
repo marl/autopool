@@ -4,11 +4,11 @@
 
 API Reference
 -------------
-.. automodule:: autopool.autopool
-    :members:
+.. autoclass:: autopool.AutoPool1D
+    :no-undoc-members:
+    :special-members: __init__
 
-.. automodule:: autopool.autopool.AutoPool1D
-    :members:
+.. autoclass:: autopool.SoftMaxPool1D
+    :no-undoc-members:
+    :special-members: __init__
 
-.. automodule:: autopool.autopool.SoftMaxPool1D
-    :members:

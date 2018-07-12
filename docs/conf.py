@@ -19,6 +19,7 @@ import sphinx_rtd_theme
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, os.path.abspath('../autopool'))
 
 # -- Project information -----------------------------------------------------
 
@@ -49,6 +50,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.autosummary',
+    'sphinx.ext.intersphinx',
     'sphinx.ext.coverage',
     'numpydoc'
 ]
@@ -72,15 +74,23 @@ else:
     from mock import Mock as MagicMock
 
 
-class Mock(MagicMock):
-    @classmethod
-    def __getattr__(cls, name):
-        return MagicMock()
-
-
 MOCK_MODULES = [
     'keras', 'keras.engine', 'keras.engine.topology'
 ]
+
+MOCK_CLASSES = [
+    # classes you are inheriting from
+    "Layer",
+]
+
+
+class Mock(MagicMock):
+    @classmethod
+    def __getattr__(cls, name):
+        if name in MOCK_CLASSES:
+            return object
+        return MagicMock()
+
 
 sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
