@@ -5,6 +5,9 @@ import imp
 version = imp.load_source('autopool.version', 'autopool/version.py')
 description='Adaptive pooling operators for multiple instance learning'
 
+with open('README.md') as file:
+    long_description = file.read()
+
 setup(
     name='autopool',
     version=version.version,
@@ -14,7 +17,8 @@ setup(
     url='http://github.com/marl/autopool',
     download_url='http://github.com/marl/autopool/releases',
     packages=find_packages(),
-    long_description=description,
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     classifiers=[
         "License :: OSI Approved :: ISC License (ISCL)",
         "Programming Language :: Python",
