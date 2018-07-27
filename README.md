@@ -1,5 +1,5 @@
 # autopool
-Adaptive pooling operators for Multiple Instance Learning.
+Adaptive pooling operators for Multiple Instance Learning ([documentation](http://autopool.readthedocs.io/)).
 
 [![PyPI](https://img.shields.io/pypi/v/autopool.svg)](https://pypi.python.org/pypi/autopool)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
@@ -14,7 +14,7 @@ as min-, max-, or average-pooling, automatically adapting to the characteristics
 
 AutoPool can be readily applied to any differentiable model for time-series label prediction. AutoPool is presented in the following paper, where it is evaluated in conjunction with convolutional neural networks for Sound Event Detection:
 
-Adaptive pooling operators for weakly labeled sound event detection<br/>
+[Adaptive pooling operators for weakly labeled sound event detection](http://www.justinsalamon.com/uploads/4/3/9/4/4394963/mcfee_autopool_taslp_2018.pdf)<br/>
 Brian Mcfee, Justin Salamon, and Juan Pablo Bello<br/>
 IEEE Transactions on Audio, Speech and Language Processing, In press, 2018.
 
