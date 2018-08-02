@@ -3,8 +3,6 @@ Adaptive pooling operators for Multiple Instance Learning ([documentation](http:
 
 [![PyPI](https://img.shields.io/pypi/v/autopool.svg)](https://pypi.python.org/pypi/autopool)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://travis-ci.org/marl/autopool.svg?branch=master)](https://travis-ci.org/marl/autopool)
-[![Coverage Status](https://coveralls.io/repos/github/marl/autopool/badge.svg?branch=master)](https://coveralls.io/github/marl/autopool?branch=master)
 [![Documentation Status](https://readthedocs.org/projects/autopool/badge/?version=latest)](http://scaper.readthedocs.io/en/latest/?badge=latest)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/autopool.svg)]()
 
@@ -31,6 +29,7 @@ AutoPool extends softmax-weighted pooling by adding a trainable parameter α to 
 
 <img src="https://user-images.githubusercontent.com/3009670/43347985-d3bcc072-91c5-11e8-8074-f9b064d7f5a3.png" width="500px">
 
+Here, `p(Y|x)` denotes the prediction for an *instance* `x`, and `X` denotes a set (bag) of instances.  The aggregated prediction `P(Y|X)` is a weighted average of the instance-level predictions.
 Note that when α = 0 this reduces to an unweighted mean; when α = 1 this simplifies to soft-max pooling; and when α → ∞ this approaches the max operator. Hence the name: AutoPool.
 
 Usage
@@ -57,6 +56,7 @@ CAP with α norm-constrained to some value `alpha_max`:
 ```
 bag_pred = AutoPool(axis=1, kernel_constraint=keras.constraints.max_norm(alpha_max, axis=0))(instance_pred)
 ```
+Heuristics for determining sensible values of `alpha_max` are given in the paper (section III.E).
 
 RAP with l2 regularized α:
 ```
