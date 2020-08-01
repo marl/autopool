@@ -11,11 +11,11 @@ class Autopool(nn.Module):
     '''
     input_size = no of output labels
     '''
-    def __init__(self, input_size ):
+    def __init__(self, input_size, device ):
     
         super(Autopool, self).__init__()
-        self.alpha = torch.ones([input_size], dtype=torch.float64, requires_grad= True)
-        self.alpha = self.alpha.to(device)
+        self.alpha = nn.Parameter(requires_grad= True)
+        self.alpha.data = torch.ones([input_size], dtype=torch.float64, requires_grad= True, device=device)
         self.sigmoid_layer = nn.Sigmoid()
         self.softmax_layer = nn.Softmax(dim=2)
         
