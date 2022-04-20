@@ -3,7 +3,7 @@ Adaptive pooling operators for Multiple Instance Learning ([documentation](http:
 
 [![PyPI](https://img.shields.io/pypi/v/autopool.svg)](https://pypi.python.org/pypi/autopool)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
-[![Documentation Status](https://readthedocs.org/projects/autopool/badge/?version=latest)](http://scaper.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/autopool/badge/?version=latest)](http://autopool.readthedocs.io/en/latest/?badge=latest)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/autopool.svg)]()
 
 
