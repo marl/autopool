@@ -25,17 +25,16 @@ setup(
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "Topic :: Multimedia :: Sound/Audio :: Analysis",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.4",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
     ],
     keywords='deep learning, multiple instance learning, machine learning',
     license='MIT',
     install_requires=[
-        'keras>=2.0',
+        'keras>=2.2',
     ],
     extras_require={ 'docs': ['numpydoc', 'sphinx-gallery'] }
 )

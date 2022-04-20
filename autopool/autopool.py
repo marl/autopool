@@ -2,7 +2,7 @@
 '''Autopool: Adaptive pooling operators for multiple instance learning'''
 
 from keras import backend as K
-from keras.engine.topology import Layer, InputSpec
+from keras.layers import Layer, InputSpec
 from keras import initializers
 from keras import constraints
 from keras import regularizers
