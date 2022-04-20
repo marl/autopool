@@ -1,0 +1,12 @@
+name: test
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # required
+  - keras>=2.2
+  - tensorflow>=2.0
+  - numpy >= 1.17
+  - pytest-cov
+  - pytest-faulthandler
+  - pytest
