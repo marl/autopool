@@ -10,9 +10,8 @@ AutoPool
 ========
 
 AutoPool is an adaptive pooling function with a learnable parameter that allows
-it to smoothly interpolate between min-, mean-, softmax- and max-pooling. It is
-implemented as a `Keras <https://keras.io/>`_ layer for easy integration in
-deep learning architectures.
+it to smoothly interpolate between min-, mean-, softmax- and max-pooling.
+It is implemented as `Keras <https://keras.io/>`_ or `Tensorflow-Keras <https://www.tensorflow.org/api_docs/python/tf/keras>`_ layers for easy integration in deep learning architectures.
 
 AutoPool was originally developed for multiple instance learning from weakly
 labeled time-series data as detailed in the

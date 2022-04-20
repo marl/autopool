@@ -85,7 +85,7 @@ class AutoPool1D(Layer):
 
 class SoftMaxPool1D(Layer):
     '''
-    Keras softmax pooling layer.
+    Tensorflow-keras softmax pooling layer.
     '''
 
     def __init__(self, axis=0, **kwargs):

@@ -9,17 +9,12 @@ The simplest way to install *autopool* is through the Python Package Index
 (PyPI). This will ensure that all required dependencies are fulfilled.
 This can be achieved by executing the following command::
 
-    pip install autopool
+    python -m pip install autopool[keras]
 
-or::
+which installs autopool for the Keras backend.
+If you would rather use tensorflow, you can do the following::
 
-    sudo pip install autopool
-
-to install system-wide, or::
-
-    pip install -u autopool
-
-to install just for your own user.
+    python -m pip install autopool[tf]
 
 Source
 ~~~~~~
@@ -37,8 +32,8 @@ install with `pip install -e` to link to your actively developed source tree::
 
     tar xzf autopool-VERSION.tar.gz
     cd autopool-VERSION/
-    pip install -e .
+    python -m pip install -e .
 
 Alternately, the latest development version can be installed via pip::
 
-    pip install git+https://github.com/marl/autopool
+    python -m pip install git+https://github.com/marl/autopool
