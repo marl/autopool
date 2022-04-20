@@ -20,7 +20,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     classifiers=[
-        "License :: OSI Approved :: ISC License (ISCL)",
+        "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
@@ -36,5 +36,6 @@ setup(
     extras_require={'docs': ['numpydoc', 'sphinx-gallery'],
                     'keras': ['keras>=2.2'],
                     'tf': ['tensorflow>=2.0'],
+                    'all': ['keras>=2.2', 'tensorflow>=2.0']
                     }
 )
