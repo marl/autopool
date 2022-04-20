@@ -76,10 +76,7 @@ class AutoPool1D(Layer):
         return dict(list(base_config.items()) + list(config.items()))
 
     def call(self, x, mask=None):
-        scaled = self.kernel * x
-        max_val = K.max(scaled, axis=self.axis, keepdims=True)
-        softmax = K.exp(scaled - max_val)
-        weights = softmax / K.sum(softmax, axis=self.axis, keepdims=True)
+        weights = K.softmax(self.kernel * x, axis=self.axis)
         return K.sum(x * weights, axis=self.axis, keepdims=False)
 
 
@@ -111,9 +108,7 @@ class SoftMaxPool1D(Layer):
         return self.get_output_shape_for(input_shape)
 
     def call(self, x, mask=None):
-        max_val = K.max(x, axis=self.axis, keepdims=True)
-        softmax = K.exp((x - max_val))
-        weights = softmax / K.sum(softmax, axis=self.axis, keepdims=True)
+        weights = K.softmax(x, axis=self.axis)
         return K.sum(x * weights, axis=self.axis, keepdims=False)
 
     def get_config(self):
