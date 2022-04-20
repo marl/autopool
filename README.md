@@ -19,8 +19,13 @@ IEEE Transactions on Audio, Speech and Language Processing, In press, 2018.
 Installation
 ------------
 
+To install the keras-based implementation:
 ```
-pip install autopool
+python -m pip install autopool[keras]
+```
+For the tensorflow implementation:
+```
+python -m pip install autopool[tf]
 ```
 
 Definition
@@ -37,7 +42,8 @@ Usage
 AutoPool is implemented as a [keras](https://keras.io/) layer, so using it is as straightforward as using any standard Keras pooling layer, for example:
 
 ```
-bag_pred = AutoPool(axis=1)(instance_pred)
+from autpool.keras import AutoPool1D
+bag_pred = AutoPool1D(axis=1)(instance_pred)
 ```
 
 Further details and examples are provided in the [documentation](http://autopool.readthedocs.io/).
@@ -49,22 +55,24 @@ In the [paper](http://www.justinsalamon.com/uploads/4/3/9/4/4394963/mcfee_autopo
 
 CAP with non-negative α:
 ```
-bag_pred = AutoPool(axis=1, kernel_constraint=keras.constraints.non_neg())(instance_pred)
+bag_pred = AutoPool1D(axis=1, kernel_constraint=keras.constraints.non_neg())(instance_pred)
 ```
 
 CAP with α norm-constrained to some value `alpha_max`:
 ```
-bag_pred = AutoPool(axis=1, kernel_constraint=keras.constraints.max_norm(alpha_max, axis=0))(instance_pred)
+bag_pred = AutoPool1D(axis=1, kernel_constraint=keras.constraints.max_norm(alpha_max, axis=0))(instance_pred)
 ```
 Heuristics for determining sensible values of `alpha_max` are given in the paper (section III.E).
 
 RAP with l2 regularized α:
 ```
-bag_pred = AutoPool(axis=1, kernel_regularizer=keras.regularizers.l2(l=1e-4))(instance_pred)
+bag_pred = AutoPool1D(axis=1, kernel_regularizer=keras.regularizers.l2(l=1e-4))(instance_pred)
 ```
 
 CAP and RAP can be combined, of course, by applying both a kernel constraint and a kernel regularizer.
 
+If using the tensorflow-based implementation, all of the above will also work, except that `keras` should be replaced by
+`tensorflow.keras`.
 
 Multi-label
 -----------

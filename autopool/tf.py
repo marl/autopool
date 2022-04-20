@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 '''Autopool: Adaptive pooling operators for multiple instance learning'''
 
-from keras import backend as K
-from keras.layers import Layer, InputSpec
-from keras import initializers
-from keras import constraints
-from keras import regularizers
+from tensorflow.keras import backend as K
+from tensorflow.keras.layers import Layer, InputSpec
+from tensorflow.keras import initializers
+from tensorflow.keras import constraints
+from tensorflow.keras import regularizers
 
 
 class AutoPool1D(Layer):
-    '''Automatically tuned soft-max pooling.
+    '''Automatically tuned soft-max pooling.  (tensorflow.keras implementation)
 
     This layer automatically adapts the pooling behavior to interpolate
     between mean- and max-pooling for each dimension.

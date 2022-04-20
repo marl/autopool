@@ -33,8 +33,8 @@ setup(
     ],
     keywords='deep learning, multiple instance learning, machine learning',
     license='MIT',
-    install_requires=[
-        'keras>=2.2',
-    ],
-    extras_require={ 'docs': ['numpydoc', 'sphinx-gallery'] }
+    extras_require={'docs': ['numpydoc', 'sphinx-gallery'],
+                    'keras': ['keras>=2.2'],
+                    'tf': ['tensorflow>=2.0'],
+                    }
 )
