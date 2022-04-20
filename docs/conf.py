@@ -75,7 +75,8 @@ else:
 
 
 MOCK_MODULES = [
-    'keras', 'keras.engine', 'keras.layers'
+    'keras', 'keras.layers',
+    'tensorflow.keras', 'tensorflow.keras.layers'
 ]
 
 MOCK_CLASSES = [
