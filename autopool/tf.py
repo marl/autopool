@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 '''Autopool: Adaptive pooling operators for multiple instance learning'''
 
-from keras import backend as K
-from keras.engine.topology import Layer, InputSpec
-from keras import initializers
-from keras import constraints
-from keras import regularizers
+from tensorflow.keras import backend as K
+from tensorflow.keras.layers import Layer, InputSpec
+from tensorflow.keras import initializers
+from tensorflow.keras import constraints
+from tensorflow.keras import regularizers
 
 
 class AutoPool1D(Layer):
-    '''Automatically tuned soft-max pooling.
+    '''Automatically tuned soft-max pooling.  (tensorflow.keras implementation)
 
     This layer automatically adapts the pooling behavior to interpolate
     between mean- and max-pooling for each dimension.
@@ -76,16 +76,13 @@ class AutoPool1D(Layer):
         return dict(list(base_config.items()) + list(config.items()))
 
     def call(self, x, mask=None):
-        scaled = self.kernel * x
-        max_val = K.max(scaled, axis=self.axis, keepdims=True)
-        softmax = K.exp(scaled - max_val)
-        weights = softmax / K.sum(softmax, axis=self.axis, keepdims=True)
+        weights = K.softmax(self.kernel * x, axis=self.axis)
         return K.sum(x * weights, axis=self.axis, keepdims=False)
 
 
 class SoftMaxPool1D(Layer):
     '''
-    Keras softmax pooling layer.
+    Tensorflow-keras softmax pooling layer.
     '''
 
     def __init__(self, axis=0, **kwargs):
@@ -111,9 +108,7 @@ class SoftMaxPool1D(Layer):
         return self.get_output_shape_for(input_shape)
 
     def call(self, x, mask=None):
-        max_val = K.max(x, axis=self.axis, keepdims=True)
-        softmax = K.exp((x - max_val))
-        weights = softmax / K.sum(softmax, axis=self.axis, keepdims=True)
+        weights = K.softmax(x, axis=self.axis)
         return K.sum(x * weights, axis=self.axis, keepdims=False)
 
     def get_config(self):

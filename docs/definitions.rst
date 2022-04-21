@@ -30,20 +30,20 @@ CAP with non-negative α:
 
 .. code-block:: python
 
-    bag_pred = AutoPool(axis=1, kernel_constraint=keras.constraints.non_neg())(instance_pred)
+    bag_pred = AutoPool1D(axis=1, kernel_constraint=keras.constraints.non_neg())(instance_pred)
 
 
 CAP with α norm-constrained to some value `alpha_max`:
 
 .. code-block:: python
 
-    bag_pred = AutoPool(axis=1, kernel_constraint=keras.constraints.max_norm(alpha_max, axis=0))(instance_pred)
+    bag_pred = AutoPool1D(axis=1, kernel_constraint=keras.constraints.max_norm(alpha_max, axis=0))(instance_pred)
 
 RAP with l2 regularized α:
 
 .. code-block:: python
 
-    bag_pred = AutoPool(axis=1, kernel_regularizer=keras.regularizers.l2(l=1e-4))(instance_pred)
+    bag_pred = AutoPool1D(axis=1, kernel_regularizer=keras.regularizers.l2(l=1e-4))(instance_pred)
 
 CAP and RAP can be combined, of course, by applying both a kernel constraint
 and a kernel regularizer.
