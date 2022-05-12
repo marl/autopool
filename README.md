@@ -42,7 +42,7 @@ Usage
 AutoPool is implemented as a [keras](https://keras.io/) layer, so using it is as straightforward as using any standard Keras pooling layer, for example:
 
 ```
-from autpool.keras import AutoPool1D
+from autopool.keras import AutoPool1D
 bag_pred = AutoPool1D(axis=1)(instance_pred)
 ```
 
